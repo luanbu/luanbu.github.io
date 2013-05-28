@@ -1,0 +1,7 @@
+name: Chin.Sung.Li
+pygments: true
+safe: false
+plugins: ./_plugins
+markdown:  rdiscount
+pandoc:
+   extensions: [smart, mathjax,mathml,toc]

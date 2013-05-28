@@ -1,0 +1,25 @@
+---
+layout: default
+title: Chin.Sung.Li
+---
+
+{% for post in site.posts limit:3 %}
+<div class="wrapper">
+	<h1><a href="{{ post.url }}">{{ post.title }}</a> <small class="pull-right">{{ post.date | date:"%b %e, %Y" }}</small></h1>
+	{{ post.content }}
+</div>
+{% endfor %}
+{% comment %}
+<!-- show 1 postTitles -->
+{% endcomment %}
+
+{% if site.posts.size > 3 %}
+<div class="wrapper">
+<ul class="postsList">
+{% for post in site.posts limit: 5 offset:3 %}
+<li><span>{{ post.date | date: "%b %d, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+<li><a class="btn"  href="/archive/">存档</a> →</li>
+</ul>
+</div>
+{% endif %}
