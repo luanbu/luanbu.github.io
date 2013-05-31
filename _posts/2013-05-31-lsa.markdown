@@ -10,7 +10,7 @@ go to [http://files6.directadmin.com/services/custombuild/](http://files6.direct
 
 > /etc/php5/fpm/php.ini
 
-  zend_extension=<full_path_to_ZendGuardLoader.so>
+	zend_extension=<full_path_to_ZendGuardLoader.so>
 	zend_loader.enable=1
 
 ## how to detect if your system is 64 bit or 32 bit
