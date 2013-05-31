@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Linux System Administration Note"
+date:   2013-05-31 17:45:03
+---
+
+## install fucking zend guard loader to decode zend encoded php scripts
+
+go to [http://files6.directadmin.com/services/custombuild/](http://files6.directadmin.com/services/custombuild/) and find the right version for your system
+
+> /etc/php5/fpm/php.ini
+
+  zend_extension=<full_path_to_ZendGuardLoader.so>
+	zend_loader.enable=1
+
+## how to detect if your system is 64 bit or 32 bit
+
+file /sbin/init
+
+>ELF 32-bit
+
+## downgrade from php 5.4 to php 5.3
+
+> /etc/apt/sources.list
+
+	deb http://packages.dotdeb.org squeeze all
+	deb-src http://packages.dotdeb.org squeeze all
+	deb http://packages.dotdeb.org squeeze-php54 all
+	deb-src http://packages.dotdeb.org squeeze-php54 all
+
+remove last two lines
+
+	apt-get remove php5-cli php5 php5-common php5-mysql
+
+	apt-get update
+
+	apt-get install -y nginx php-auth-sasl php-http-request php-mail php-mail-mime php-mail-mimedecode php-net-dime php-net-smtp php-net-socket php-net-url php-pear php-soap php5-apc php5-cli php5-common php5-curl php5-dev php5-fpm php5-gd php5-mcrypt php5-memcache php5-mysql php5-tidy php5-xmlrpc
